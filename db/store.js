@@ -34,7 +34,7 @@ class Notes {
         
         newNote.id = uuidv4();
 
-        this.getNotes().then(notesArray => {
+        return this.getNotes().then(notesArray => {
             notesArray.push(newNote);
             this.write(notesArray);
         });
