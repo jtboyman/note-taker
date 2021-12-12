@@ -39,6 +39,15 @@ class Notes {
             this.write(notesArray);
         });
     };
+
+    deleteNote(id) {
+        return this.getNotes().then(notesArray => {
+            for (let i=0; i < notesArray.length; i++)
+                if (notesArray[i].id === id) {
+                    notesArray.splice(i,1);
+                }
+        });
+    };
     
 }
 

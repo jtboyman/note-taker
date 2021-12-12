@@ -14,4 +14,10 @@ router.post('/notes', (req, res) => {
     .catch(err => res.status(500).json(err)); //returns error
 });
 
+router.delete('/notes/:id', (req, res) => {
+    notes.deleteNote(req.params.id)
+    .then(() => res.json({ok: true}))
+    .catch(err => res.status(500).json(err));
+});
+
 module.exports = router;
